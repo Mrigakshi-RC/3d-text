@@ -7,8 +7,6 @@ import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 /**
  * Base
  */
-// Debug
-const gui = new GUI();
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -109,6 +107,10 @@ camera.position.x = 1;
 camera.position.y = 1;
 camera.position.z = 2;
 scene.add(camera);
+
+// Controls
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
 
 /**
  * Renderer
